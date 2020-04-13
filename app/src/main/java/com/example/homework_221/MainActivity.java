@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        noteSharedPref = getSharedPreferences("my_prefs", MODE_PRIVATE);
         getDateFromSharedPref();
     }
 
     private void init() {
         noteEdtx = findViewById(R.id.noteEdtx);
         saveBtn = findViewById(R.id.saveBtn);
+
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
